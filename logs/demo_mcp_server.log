@@ -1,0 +1,398 @@
+2025-07-26 08:16:41,874 - demo_mcp_server - INFO - Initializing MCP server...
+2025-07-26 08:16:41,875 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-07-26 08:16:41,922 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-07-26 08:16:55,705 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: c60c0b9e04564190ae2a4ebe49a3fd27
+2025-07-26 08:17:41,480 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: fd67561a25964184b4b55de86c1fbac9
+2025-07-26 08:17:41,530 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 08:17:48,156 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 08:17:48,158 - demo_mcp_server - INFO - Executing SQL query: SELECT customer_id, SUM(revenue) AS total_spending FROM sales GROUP BY customer_id ORDER BY total_spending DESC;
+2025-07-26 08:17:48,184 - demo_mcp_server - ERROR - SQL execution error: no such table: sales
+2025-07-26 08:17:48,203 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 08:17:49,932 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 08:17:50,074 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 08:17:50,075 - demo_mcp_server - INFO - Executing SQL query: SELECT customer_id, SUM(amount) AS total_spending FROM transactions GROUP BY customer_id ORDER BY total_spending DESC;
+2025-07-26 08:17:50,077 - demo_mcp_server - ERROR - SQL execution error: no such table: transactions
+2025-07-26 08:17:50,096 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 08:17:52,195 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 08:17:52,195 - demo_mcp_server - INFO - Executing SQL query: SELECT customer_id, SUM(purchase_amount) AS total_spending FROM purchases GROUP BY customer_id ORDER BY total_spending DESC;
+2025-07-26 08:17:52,195 - demo_mcp_server - ERROR - SQL execution error: no such table: purchases
+2025-07-26 08:17:52,218 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:16:49,295 - demo_mcp_server - INFO - Initializing MCP server...
+2025-07-26 11:16:49,301 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-07-26 11:16:53,339 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-07-26 11:17:50,435 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 1cf6804fecd742fd8033c386970bc889
+2025-07-26 11:18:55,189 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: d8cc1cd61a4346b88ee1249ef3397e0e
+2025-07-26 11:18:55,381 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:24,434 - mcp.server.streamable_http - INFO - Terminating session: d8cc1cd61a4346b88ee1249ef3397e0e
+2025-07-26 11:19:25,089 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 7f6c43f572f241f0a5458d03545c210f
+2025-07-26 11:19:25,137 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:26,717 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:26,752 - demo_mcp_server - INFO - Executing SQL query: SELECT artist_name, SUM(sales) AS total_sales 
+FROM artists 
+GROUP BY artist_name 
+ORDER BY total_sales DESC 
+LIMIT 3;
+2025-07-26 11:19:26,799 - demo_mcp_server - ERROR - SQL execution error: no such column: artist_name
+2025-07-26 11:19:27,021 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:29,300 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:29,302 - demo_mcp_server - INFO - Executing SQL query: SELECT name FROM sqlite_master WHERE type='table';
+2025-07-26 11:19:29,312 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 14
+2025-07-26 11:19:29,359 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:30,505 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:30,505 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(artists);
+2025-07-26 11:19:30,505 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-07-26 11:19:31,110 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:33,831 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:33,835 - demo_mcp_server - INFO - Executing SQL query: SELECT i.ArtistId, SUM(ii.Quantity * ii.UnitPrice) AS total_sales 
+FROM invoice_items ii 
+JOIN invoices i ON ii.InvoiceId = i.InvoiceId 
+JOIN artists a ON i.ArtistId = a.ArtistId 
+GROUP BY a.ArtistId 
+ORDER BY total_sales DESC 
+LIMIT 3;
+2025-07-26 11:19:33,848 - demo_mcp_server - ERROR - SQL execution error: no such column: i.ArtistId
+2025-07-26 11:19:33,892 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:36,485 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:38,343 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:38,343 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(invoices);
+2025-07-26 11:19:38,343 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 9
+2025-07-26 11:19:38,359 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:38,359 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(invoice_items);
+2025-07-26 11:19:38,359 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 5
+2025-07-26 11:19:38,441 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:40,280 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:43,727 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:43,727 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(tracks);
+2025-07-26 11:19:43,727 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 9
+2025-07-26 11:19:44,238 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:47,823 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:47,827 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(albums);
+2025-07-26 11:19:47,827 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-07-26 11:19:47,845 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:52,083 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:52,085 - demo_mcp_server - INFO - Executing SQL query: SELECT a.ArtistId, ar.Name, SUM(ii.Quantity * ii.UnitPrice) AS total_sales 
+FROM invoice_items ii 
+JOIN invoices i ON ii.InvoiceId = i.InvoiceId 
+JOIN tracks t ON ii.TrackId = t.TrackId 
+JOIN albums al ON t.AlbumId = al.AlbumId 
+JOIN artists ar ON al.ArtistId = ar.ArtistId 
+GROUP BY ar.ArtistId, ar.Name 
+ORDER BY total_sales DESC 
+LIMIT 3;
+2025-07-26 11:19:52,105 - demo_mcp_server - ERROR - SQL execution error: no such column: a.ArtistId
+2025-07-26 11:19:52,156 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:19:55,264 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:19:55,264 - demo_mcp_server - INFO - Executing SQL query: SELECT ar.ArtistId, ar.Name, SUM(ii.Quantity * ii.UnitPrice) AS total_sales 
+FROM invoice_items ii 
+JOIN invoices i ON ii.InvoiceId = i.InvoiceId 
+JOIN tracks t ON ii.TrackId = t.TrackId 
+JOIN albums al ON t.AlbumId = al.AlbumId 
+JOIN artists ar ON al.ArtistId = ar.ArtistId 
+GROUP BY ar.ArtistId, ar.Name 
+ORDER BY total_sales DESC 
+LIMIT 3;
+2025-07-26 11:19:55,319 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-07-26 11:19:55,334 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:23:04,017 - mcp.server.streamable_http - INFO - Terminating session: 7f6c43f572f241f0a5458d03545c210f
+2025-07-26 11:23:04,558 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 387248377bfa43ea880aed8385188072
+2025-07-26 11:23:04,653 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:23:05,967 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:23:05,970 - demo_mcp_server - INFO - Executing SQL query: SELECT al.Title, ar.Name 
+FROM albums al 
+JOIN artists ar ON al.ArtistId = ar.ArtistId;
+2025-07-26 11:23:05,973 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 347
+2025-07-26 11:23:06,009 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:23:09,076 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:37:14,177 - mcp.server.streamable_http - INFO - Terminating session: 387248377bfa43ea880aed8385188072
+2025-07-26 11:37:14,777 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 87d62f1274af484e8f4001f67a5fecd0
+2025-07-26 11:37:14,838 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:37:22,777 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,778 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS albums;
+2025-07-26 11:37:22,813 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:22,854 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,854 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS artists;
+2025-07-26 11:37:22,859 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:22,895 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,895 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS customers;
+2025-07-26 11:37:22,905 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:22,930 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,930 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS employees;
+2025-07-26 11:37:22,935 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:22,960 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,960 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS genres;
+2025-07-26 11:37:22,970 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:22,987 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:22,991 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS invoices;
+2025-07-26 11:37:23,002 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,028 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,030 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS invoice_items;
+2025-07-26 11:37:23,030 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,064 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,064 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS media_types;
+2025-07-26 11:37:23,071 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,094 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,102 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS playlists;
+2025-07-26 11:37:23,102 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,127 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,131 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS playlist_track;
+2025-07-26 11:37:23,156 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,185 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,185 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS tracks;
+2025-07-26 11:37:23,231 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 0
+2025-07-26 11:37:23,247 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-07-26 11:37:23,247 - demo_mcp_server - INFO - Executing SQL query: DROP TABLE IF EXISTS sqlite_sequence;
+2025-07-26 11:37:23,250 - demo_mcp_server - ERROR - SQL execution error: table sqlite_sequence may not be dropped
+2025-07-26 11:37:23,282 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-07-26 11:38:14,070 - mcp.server.streamable_http - INFO - Terminating session: 87d62f1274af484e8f4001f67a5fecd0
+2025-09-12 20:24:00,962 - demo_mcp_server - INFO - Initializing MCP server...
+2025-09-12 20:24:00,962 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-09-12 20:24:01,019 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-09-12 20:24:11,571 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: df18a02cc9f9468bb69c61e9839192fb
+2025-09-12 20:25:21,284 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 0f79f24009ef44768c57006d0a5187d7
+2025-09-12 20:25:21,339 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:25:23,885 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:25:23,885 - demo_mcp_server - INFO - Executing SQL query: SHOW TABLES;
+2025-09-12 20:25:23,927 - demo_mcp_server - ERROR - SQL execution error: near "SHOW": syntax error
+2025-09-12 20:25:23,949 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:25:25,466 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:25:25,467 - demo_mcp_server - INFO - Executing SQL query: SELECT name FROM sqlite_master WHERE type='table';
+2025-09-12 20:25:25,475 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 14
+2025-09-12 20:25:25,488 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:25:54,190 - mcp.server.streamable_http - INFO - Terminating session: 0f79f24009ef44768c57006d0a5187d7
+2025-09-12 20:25:54,680 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: e5910abde69c4bedbbaa8b8db061a89f
+2025-09-12 20:25:54,704 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:16,315 - mcp.server.streamable_http - INFO - Terminating session: e5910abde69c4bedbbaa8b8db061a89f
+2025-09-12 20:26:16,936 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: f28f6b3ad7af4a80afc08c2199b47b82
+2025-09-12 20:26:16,975 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:18,644 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:26:18,644 - demo_mcp_server - INFO - Executing SQL query: SELECT album_id, AVG(rating) as average_rating FROM ratings GROUP BY album_id ORDER BY average_rating DESC LIMIT 4;
+2025-09-12 20:26:18,652 - demo_mcp_server - ERROR - SQL execution error: no such table: ratings
+2025-09-12 20:26:18,683 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:20,156 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:26:20,157 - demo_mcp_server - INFO - Executing SQL query: SELECT album_id, COUNT(*) as play_count FROM tracks GROUP BY album_id ORDER BY play_count DESC LIMIT 4;
+2025-09-12 20:26:20,159 - demo_mcp_server - ERROR - SQL execution error: no such column: album_id
+2025-09-12 20:26:20,182 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:21,255 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:26:21,257 - demo_mcp_server - INFO - Executing SQL query: SELECT name FROM albums ORDER BY name LIMIT 4;
+2025-09-12 20:26:21,260 - demo_mcp_server - ERROR - SQL execution error: no such column: name
+2025-09-12 20:26:21,267 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-12 20:26:21,288 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:23,559 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:26:23,574 - demo_mcp_server - INFO - Executing SQL query: DESCRIBE albums;
+2025-09-12 20:26:23,575 - demo_mcp_server - ERROR - SQL execution error: near "DESCRIBE": syntax error
+2025-09-12 20:26:23,592 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:26:25,529 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:26:25,529 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(albums);
+2025-09-12 20:26:25,529 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-12 20:26:25,558 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:27:35,554 - mcp.server.streamable_http - INFO - Terminating session: f28f6b3ad7af4a80afc08c2199b47b82
+2025-09-12 20:27:36,093 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 98da546a11bc4b9fa94f0cac38e1f1ea
+2025-09-12 20:27:36,151 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:27:37,526 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:27:37,526 - demo_mcp_server - INFO - Executing SQL query: SELECT a.Title, ar.Name FROM albums a JOIN artists ar ON a.ArtistId = ar.ArtistId;
+2025-09-12 20:27:37,545 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 347
+2025-09-12 20:27:37,586 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:28:33,410 - mcp.server.streamable_http - INFO - Terminating session: 98da546a11bc4b9fa94f0cac38e1f1ea
+2025-09-12 20:28:33,905 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: a811ca1419c54bdfbd8d35b71d2bb3cc
+2025-09-12 20:28:33,953 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:00,995 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:02,320 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:02,321 - demo_mcp_server - INFO - Executing SQL query: SELECT table_name 
+FROM information_schema.columns 
+WHERE column_name = 'price';
+2025-09-12 20:31:02,329 - demo_mcp_server - ERROR - SQL execution error: no such table: information_schema.columns
+2025-09-12 20:31:02,352 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:04,302 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:04,306 - demo_mcp_server - INFO - Executing SQL query: SELECT name FROM sqlite_master WHERE type='table';
+2025-09-12 20:31:04,308 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 14
+2025-09-12 20:31:04,327 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:10,463 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,469 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(albums);
+2025-09-12 20:31:10,473 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-12 20:31:10,502 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,503 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(artists);
+2025-09-12 20:31:10,507 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-09-12 20:31:10,519 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,529 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(customers);
+2025-09-12 20:31:10,533 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 13
+2025-09-12 20:31:10,559 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,559 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(employees);
+2025-09-12 20:31:10,561 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 15
+2025-09-12 20:31:10,574 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,579 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(genres);
+2025-09-12 20:31:10,582 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-09-12 20:31:10,590 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,590 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(invoices);
+2025-09-12 20:31:10,598 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 9
+2025-09-12 20:31:10,609 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,611 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(invoice_items);
+2025-09-12 20:31:10,614 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 5
+2025-09-12 20:31:10,628 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,629 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(media_types);
+2025-09-12 20:31:10,631 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-09-12 20:31:10,639 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,639 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(playlists);
+2025-09-12 20:31:10,643 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-09-12 20:31:10,665 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,672 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(playlist_track);
+2025-09-12 20:31:10,674 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 2
+2025-09-12 20:31:10,684 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:31:10,689 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(tracks);
+2025-09-12 20:31:10,692 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 9
+2025-09-12 20:31:10,707 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,729 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,759 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,785 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,813 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,836 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,861 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,883 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,898 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,917 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,932 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:20,946 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:31:59,726 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:32:01,106 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:32:01,108 - demo_mcp_server - INFO - Executing SQL query: SELECT * FROM albums LIMIT 10;
+2025-09-12 20:32:01,110 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 10
+2025-09-12 20:32:01,131 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:33:25,771 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:33:26,834 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:33:26,835 - demo_mcp_server - INFO - Executing SQL query: DESCRIBE albums;
+2025-09-12 20:33:26,837 - demo_mcp_server - ERROR - SQL execution error: near "DESCRIBE": syntax error
+2025-09-12 20:33:26,856 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:33:28,843 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:33:28,843 - demo_mcp_server - INFO - Executing SQL query: PRAGMA table_info(albums);
+2025-09-12 20:33:28,843 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-12 20:33:28,868 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:33:35,742 - mcp.server.streamable_http - INFO - Terminating session: a811ca1419c54bdfbd8d35b71d2bb3cc
+2025-09-12 20:36:25,875 - demo_mcp_server - INFO - Initializing MCP server...
+2025-09-12 20:36:25,875 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-09-12 20:36:25,937 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-09-12 20:37:01,780 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 83e4df08ce534b8c8ac010962c5978ca
+2025-09-12 20:37:01,816 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:37:04,394 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:37:04,395 - demo_mcp_server - INFO - Discovering database schema.
+2025-09-12 20:37:04,419 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:37:07,170 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:37:44,684 - mcp.server.streamable_http - INFO - Terminating session: 83e4df08ce534b8c8ac010962c5978ca
+2025-09-12 20:37:45,152 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 551d4508b733455f8116c01a21139306
+2025-09-12 20:37:45,225 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:37:54,562 - mcp.server.streamable_http - INFO - Terminating session: 551d4508b733455f8116c01a21139306
+2025-09-12 20:37:55,006 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 592e4bfeff3142249a985c99036e3978
+2025-09-12 20:37:55,030 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 20:37:55,852 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-12 20:37:55,853 - demo_mcp_server - INFO - Getting column summary for table: albums
+2025-09-12 20:37:55,871 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-12 23:47:48,870 - mcp.server.streamable_http - INFO - Terminating session: 592e4bfeff3142249a985c99036e3978
+2025-09-12 23:47:53,713 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager shutting down
+2025-09-12 23:47:53,725 - demo_mcp_server - INFO - MCP server started successfully.
+2025-09-13 00:03:07,068 - demo_mcp_server - INFO - Initializing MCP server...
+2025-09-13 00:03:07,068 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-09-13 00:03:07,136 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-09-13 00:04:47,574 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 1f5e793b66a745cbb61b2ca9aed3e366
+2025-09-13 00:04:48,142 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 00:04:50,387 - mcp.server.streamable_http - INFO - Terminating session: 1f5e793b66a745cbb61b2ca9aed3e366
+2025-09-13 00:05:34,744 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 95e741c9fce24410971ac87945386115
+2025-09-13 00:05:35,314 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 00:05:37,223 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 00:05:37,223 - demo_mcp_server - INFO - Discovering database schema.
+2025-09-13 00:05:40,121 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 00:05:40,121 - demo_mcp_server - INFO - Executing SQL query: SELECT ar.Name, SUM(iv.Total) AS TotalSales
+FROM artists ar
+JOIN albums al ON ar.ArtistId = al.ArtistId
+JOIN tracks tr ON al.AlbumId = tr.AlbumId
+JOIN invoice_items ii ON tr.TrackId = ii.TrackId
+JOIN invoices iv ON ii.InvoiceId = iv.InvoiceId
+GROUP BY ar.ArtistId
+ORDER BY TotalSales DESC
+LIMIT 3;
+2025-09-13 00:05:40,145 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-13 00:05:41,628 - mcp.server.streamable_http - INFO - Terminating session: 95e741c9fce24410971ac87945386115
+2025-09-13 12:41:12,432 - demo_mcp_server - INFO - Initializing MCP server...
+2025-09-13 12:41:12,432 - demo_mcp_server - INFO - Starting MCP server on 127.0.0.1:8001 with path /mcp/
+2025-09-13 12:41:12,499 - mcp.server.streamable_http_manager - INFO - StreamableHTTP session manager started
+2025-09-13 12:41:51,708 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: d4e50426e81943a5b6a07c3c13b17b44
+2025-09-13 12:48:42,020 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: b3f038e7f552497c86e93e184a01e11c
+2025-09-13 12:48:42,068 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:49:00,822 - mcp.server.streamable_http - INFO - Terminating session: b3f038e7f552497c86e93e184a01e11c
+2025-09-13 12:49:01,271 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: f5ca2dbe9f564caea8a152348f76a511
+2025-09-13 12:49:01,320 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:49:02,870 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 12:49:02,886 - demo_mcp_server - INFO - Discovering database schema.
+2025-09-13 12:49:02,932 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:50:08,725 - mcp.server.streamable_http - INFO - Terminating session: f5ca2dbe9f564caea8a152348f76a511
+2025-09-13 12:50:09,195 - mcp.server.streamable_http_manager - INFO - Created new transport with session ID: 4742b8ae05ae4bee95887a55b12c0e04
+2025-09-13 12:50:09,226 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:50:51,909 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:51:18,545 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:51:18,549 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-13 12:51:20,956 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 12:51:20,960 - demo_mcp_server - INFO - Executing SQL query: SELECT artists.Name, SUM(invoices.Total) AS TotalSales
+FROM artists
+JOIN albums ON artists.ArtistId = albums.ArtistId
+JOIN tracks ON albums.AlbumId = tracks.AlbumId
+JOIN invoice_items ON tracks.TrackId = invoice_items.TrackId
+JOIN invoices ON invoice_items.InvoiceId = invoices.InvoiceId
+GROUP BY artists.Name
+ORDER BY TotalSales DESC
+LIMIT 3;
+2025-09-13 12:51:20,981 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-13 12:51:21,003 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:51:33,493 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:05,176 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:06,971 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:06,985 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-13 12:52:11,888 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:13,385 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:40,857 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:44,197 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 12:52:44,208 - demo_mcp_server - INFO - Executing SQL query: SELECT artist, SUM(sales) as total_sales FROM music_sales GROUP BY artist ORDER BY total_sales DESC LIMIT 3;
+2025-09-13 12:52:44,208 - demo_mcp_server - ERROR - SQL execution error: no such table: music_sales
+2025-09-13 12:52:44,235 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:45,169 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 12:52:45,169 - demo_mcp_server - INFO - Discovering database schema.
+2025-09-13 12:52:45,185 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:47,604 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-09-13 12:52:47,604 - demo_mcp_server - INFO - Executing SQL query: SELECT a.Name, SUM(i.Total) as total_sales 
+FROM artists a 
+JOIN albums al ON a.ArtistId = al.ArtistId 
+JOIN tracks t ON al.AlbumId = t.AlbumId 
+JOIN invoice_items ii ON t.TrackId = ii.TrackId 
+JOIN invoices i ON ii.InvoiceId = i.InvoiceId 
+GROUP BY a.Name 
+ORDER BY total_sales DESC 
+LIMIT 3;
+2025-09-13 12:52:47,606 - demo_mcp_server - INFO - Query executed successfully. Rows returned: 3
+2025-09-13 12:52:47,634 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:50,552 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2025-09-13 12:52:50,564 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\cheta\miniconda3\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-13 12:55:09,542 - mcp.server.streamable_http - INFO - Terminating session: 4742b8ae05ae4bee95887a55b12c0e04
