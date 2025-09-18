@@ -33,8 +33,8 @@ Build an AI-powered SQL agent using MCP to interact with a SQLite database via n
 
 1. **Clone the repository**
   ```sh
-  git clone https://github.com/chicks2014/SQL_MCP.git
-  cd ADK_MCP_demo
+  git clone https://github.com/chicks2014/SQL_MCP_ADK.git
+  cd SQL_MCP_ADK
   ```
 
 2. **Install dependencies**
